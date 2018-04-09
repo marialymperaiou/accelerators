@@ -2,16 +2,17 @@ import numpy as np
 from matplotlib import *
 import matplotlib.pyplot as plt		
 
+#Plot tune oscillation over the number pof turns. This will be done for all tested chromaticities
 def tune_plots(turn, start, stop, step, naff_list, mean, color, plot_all):
 	plt.rc('text', usetex=True)
 	plt.rc('font', family='serif')
 
-	plt.plot(turn[start:stop:step], naff_list, color = color, label = r'Tunes')			#naff_list contains the tune oscillation
+	plt.plot(turn[start:stop:step], naff_list, color = color, label = r'$Tunes$')			#naff_list contains the tune oscillation
 	plt.suptitle(r'Tune vs Number of turns', fontsize=16)
 
 	ax = plt.gca()
 	if not plot_all:
-		plt.axhline(y=mean, color='crimson', linestyle='-', label = r'Mean tune')
+		plt.axhline(y=mean, color='crimson', linestyle='-', label = r'$Mean$ $tune$')
 	plt.xlabel(r'$N$')
 	plt.ylabel(r'$Q$')
 	ax.ticklabel_format(useOffset=False)

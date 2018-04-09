@@ -1,3 +1,5 @@
+#Windowing for NAFF transformation
+
 import numpy as np
 from matplotlib import *
 import matplotlib.pyplot as plt	
@@ -12,6 +14,7 @@ from tune_plots import tune_plots
 #stop is the final point of this interval
 #width defines the window size
 #step defines how much the window is moving
+
 rc('text', usetex=True)
 
 def window(start, stop, step, width, signal, turn, color='m', plot_all = False, chroma = 1, padd = False):
