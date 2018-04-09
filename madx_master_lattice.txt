@@ -1,0 +1,1894 @@
+arc_number = 8.000000;
+arc_cells = 28;
+straight_sections = 8.000000;
+straight_cells = 4;
+total_cells = (arc_number*arc_cells)+(straight_sections*straight_cells);
+cell_length = 100.000000;
+circumference = total_cells*cell_length;
+
+m = 60.100000;
+tune = 42.737778;
+cell_dipoles = 2.000000;
+no_dipoles = 96.000000;
+total_dipoles = 416.000000;
+d_angle := 2*pi/total_dipoles;
+
+kf := (4*sin(m/2))/cell_length;
+kd := -(4*sin(m/2))/cell_length;
+
+ksf := 0.000317;
+ksd := -0.000407;
+
+MBS:multipole, knl:={d_angle};
+qfType:multipole, knl:={0,kf};
+qdType:multipole, knl:={0,kd};
+sfType:multipole, knl:={0,0,ksf};
+sdType:multipole, knl:={0,0,ksd};
+CAV: RFCAVITY, L := 0.;
+
+
+fodo:SEQUENCE, REFER=entry, L=circumference; 
+
+CAV1:CAV, at=0.;
+/*cell1*/
+qf1:qfType, at=0.000000;
+qd1:qdType, at=50.000000;
+
+/*cell2*/
+qf2:qfType, at=100.000000;
+qd2:qdType, at=150.000000;
+
+/*cell3*/
+qf3:qfType, at=200.000000;
+DIP1:MBS, at=225.000000;
+qd3:qdType, at=250.000000;
+DIP2:MBS, at=275.000000;
+
+/*cell4*/
+qf4:qfType, at=300.000000;
+qd4:qdType, at=350.000000;
+
+/*cell5*/
+qf5:qfType, at=400.000000;
+sf5:sfType, at=400.000000;
+DIP3:MBS, at=425.000000;
+qd5:qdType, at=450.000000;
+sd5:sdType, at=450.000000;
+DIP4:MBS, at=475.000000;
+
+/*cell6*/
+qf6:qfType, at=500.000000;
+sf6:sfType, at=500.000000;
+DIP5:MBS, at=525.000000;
+qd6:qdType, at=550.000000;
+sd6:sdType, at=550.000000;
+DIP6:MBS, at=575.000000;
+
+/*cell7*/
+qf7:qfType, at=600.000000;
+sf7:sfType, at=600.000000;
+DIP7:MBS, at=625.000000;
+qd7:qdType, at=650.000000;
+sd7:sdType, at=650.000000;
+DIP8:MBS, at=675.000000;
+
+/*cell8*/
+qf8:qfType, at=700.000000;
+sf8:sfType, at=700.000000;
+DIP9:MBS, at=725.000000;
+qd8:qdType, at=750.000000;
+sd8:sdType, at=750.000000;
+DIP10:MBS, at=775.000000;
+
+/*cell9*/
+qf9:qfType, at=800.000000;
+sf9:sfType, at=800.000000;
+DIP11:MBS, at=825.000000;
+qd9:qdType, at=850.000000;
+sd9:sdType, at=850.000000;
+DIP12:MBS, at=875.000000;
+
+/*cell10*/
+qf10:qfType, at=900.000000;
+sf10:sfType, at=900.000000;
+DIP13:MBS, at=925.000000;
+qd10:qdType, at=950.000000;
+sd10:sdType, at=950.000000;
+DIP14:MBS, at=975.000000;
+
+/*cell11*/
+qf11:qfType, at=1000.000000;
+sf11:sfType, at=1000.000000;
+DIP15:MBS, at=1025.000000;
+qd11:qdType, at=1050.000000;
+sd11:sdType, at=1050.000000;
+DIP16:MBS, at=1075.000000;
+
+/*cell12*/
+qf12:qfType, at=1100.000000;
+sf12:sfType, at=1100.000000;
+DIP17:MBS, at=1125.000000;
+qd12:qdType, at=1150.000000;
+sd12:sdType, at=1150.000000;
+DIP18:MBS, at=1175.000000;
+
+/*cell13*/
+qf13:qfType, at=1200.000000;
+sf13:sfType, at=1200.000000;
+DIP19:MBS, at=1225.000000;
+qd13:qdType, at=1250.000000;
+sd13:sdType, at=1250.000000;
+DIP20:MBS, at=1275.000000;
+
+/*cell14*/
+qf14:qfType, at=1300.000000;
+sf14:sfType, at=1300.000000;
+DIP21:MBS, at=1325.000000;
+qd14:qdType, at=1350.000000;
+sd14:sdType, at=1350.000000;
+DIP22:MBS, at=1375.000000;
+
+/*cell15*/
+qf15:qfType, at=1400.000000;
+sf15:sfType, at=1400.000000;
+DIP23:MBS, at=1425.000000;
+qd15:qdType, at=1450.000000;
+sd15:sdType, at=1450.000000;
+DIP24:MBS, at=1475.000000;
+
+/*cell16*/
+qf16:qfType, at=1500.000000;
+sf16:sfType, at=1500.000000;
+DIP25:MBS, at=1525.000000;
+qd16:qdType, at=1550.000000;
+sd16:sdType, at=1550.000000;
+DIP26:MBS, at=1575.000000;
+
+/*cell17*/
+qf17:qfType, at=1600.000000;
+sf17:sfType, at=1600.000000;
+DIP27:MBS, at=1625.000000;
+qd17:qdType, at=1650.000000;
+sd17:sdType, at=1650.000000;
+DIP28:MBS, at=1675.000000;
+
+/*cell18*/
+qf18:qfType, at=1700.000000;
+sf18:sfType, at=1700.000000;
+DIP29:MBS, at=1725.000000;
+qd18:qdType, at=1750.000000;
+sd18:sdType, at=1750.000000;
+DIP30:MBS, at=1775.000000;
+
+/*cell19*/
+qf19:qfType, at=1800.000000;
+sf19:sfType, at=1800.000000;
+DIP31:MBS, at=1825.000000;
+qd19:qdType, at=1850.000000;
+sd19:sdType, at=1850.000000;
+DIP32:MBS, at=1875.000000;
+
+/*cell20*/
+qf20:qfType, at=1900.000000;
+sf20:sfType, at=1900.000000;
+DIP33:MBS, at=1925.000000;
+qd20:qdType, at=1950.000000;
+sd20:sdType, at=1950.000000;
+DIP34:MBS, at=1975.000000;
+
+/*cell21*/
+qf21:qfType, at=2000.000000;
+sf21:sfType, at=2000.000000;
+DIP35:MBS, at=2025.000000;
+qd21:qdType, at=2050.000000;
+sd21:sdType, at=2050.000000;
+DIP36:MBS, at=2075.000000;
+
+/*cell22*/
+qf22:qfType, at=2100.000000;
+sf22:sfType, at=2100.000000;
+DIP37:MBS, at=2125.000000;
+qd22:qdType, at=2150.000000;
+sd22:sdType, at=2150.000000;
+DIP38:MBS, at=2175.000000;
+
+/*cell23*/
+qf23:qfType, at=2200.000000;
+sf23:sfType, at=2200.000000;
+DIP39:MBS, at=2225.000000;
+qd23:qdType, at=2250.000000;
+sd23:sdType, at=2250.000000;
+DIP40:MBS, at=2275.000000;
+
+/*cell24*/
+qf24:qfType, at=2300.000000;
+sf24:sfType, at=2300.000000;
+DIP41:MBS, at=2325.000000;
+qd24:qdType, at=2350.000000;
+sd24:sdType, at=2350.000000;
+DIP42:MBS, at=2375.000000;
+
+/*cell25*/
+qf25:qfType, at=2400.000000;
+sf25:sfType, at=2400.000000;
+DIP43:MBS, at=2425.000000;
+qd25:qdType, at=2450.000000;
+sd25:sdType, at=2450.000000;
+DIP44:MBS, at=2475.000000;
+
+/*cell26*/
+qf26:qfType, at=2500.000000;
+sf26:sfType, at=2500.000000;
+DIP45:MBS, at=2525.000000;
+qd26:qdType, at=2550.000000;
+sd26:sdType, at=2550.000000;
+DIP46:MBS, at=2575.000000;
+
+/*cell27*/
+qf27:qfType, at=2600.000000;
+sf27:sfType, at=2600.000000;
+DIP47:MBS, at=2625.000000;
+qd27:qdType, at=2650.000000;
+sd27:sdType, at=2650.000000;
+DIP48:MBS, at=2675.000000;
+
+/*cell28*/
+qf28:qfType, at=2700.000000;
+sf28:sfType, at=2700.000000;
+DIP49:MBS, at=2725.000000;
+qd28:qdType, at=2750.000000;
+sd28:sdType, at=2750.000000;
+DIP50:MBS, at=2775.000000;
+
+/*cell29*/
+qf29:qfType, at=2800.000000;
+qd29:qdType, at=2850.000000;
+
+/*cell30*/
+qf30:qfType, at=2900.000000;
+DIP51:MBS, at=2925.000000;
+qd30:qdType, at=2950.000000;
+DIP52:MBS, at=2975.000000;
+
+/*cell31*/
+qf31:qfType, at=3000.000000;
+qd31:qdType, at=3050.000000;
+
+/*cell32*/
+qf32:qfType, at=3100.000000;
+qd32:qdType, at=3150.000000;
+
+/*cell33*/
+qf33:qfType, at=3200.000000;
+qd33:qdType, at=3250.000000;
+
+/*cell34*/
+qf34:qfType, at=3300.000000;
+qd34:qdType, at=3350.000000;
+
+/*cell35*/
+qf35:qfType, at=3400.000000;
+DIP53:MBS, at=3425.000000;
+qd35:qdType, at=3450.000000;
+DIP54:MBS, at=3475.000000;
+
+/*cell36*/
+qf36:qfType, at=3500.000000;
+qd36:qdType, at=3550.000000;
+
+/*cell37*/
+qf37:qfType, at=3600.000000;
+sf37:sfType, at=3600.000000;
+DIP55:MBS, at=3625.000000;
+qd37:qdType, at=3650.000000;
+sd37:sdType, at=3650.000000;
+DIP56:MBS, at=3675.000000;
+
+/*cell38*/
+qf38:qfType, at=3700.000000;
+sf38:sfType, at=3700.000000;
+DIP57:MBS, at=3725.000000;
+qd38:qdType, at=3750.000000;
+sd38:sdType, at=3750.000000;
+DIP58:MBS, at=3775.000000;
+
+/*cell39*/
+qf39:qfType, at=3800.000000;
+sf39:sfType, at=3800.000000;
+DIP59:MBS, at=3825.000000;
+qd39:qdType, at=3850.000000;
+sd39:sdType, at=3850.000000;
+DIP60:MBS, at=3875.000000;
+
+/*cell40*/
+qf40:qfType, at=3900.000000;
+sf40:sfType, at=3900.000000;
+DIP61:MBS, at=3925.000000;
+qd40:qdType, at=3950.000000;
+sd40:sdType, at=3950.000000;
+DIP62:MBS, at=3975.000000;
+
+/*cell41*/
+qf41:qfType, at=4000.000000;
+sf41:sfType, at=4000.000000;
+DIP63:MBS, at=4025.000000;
+qd41:qdType, at=4050.000000;
+sd41:sdType, at=4050.000000;
+DIP64:MBS, at=4075.000000;
+
+/*cell42*/
+qf42:qfType, at=4100.000000;
+sf42:sfType, at=4100.000000;
+DIP65:MBS, at=4125.000000;
+qd42:qdType, at=4150.000000;
+sd42:sdType, at=4150.000000;
+DIP66:MBS, at=4175.000000;
+
+/*cell43*/
+qf43:qfType, at=4200.000000;
+sf43:sfType, at=4200.000000;
+DIP67:MBS, at=4225.000000;
+qd43:qdType, at=4250.000000;
+sd43:sdType, at=4250.000000;
+DIP68:MBS, at=4275.000000;
+
+/*cell44*/
+qf44:qfType, at=4300.000000;
+sf44:sfType, at=4300.000000;
+DIP69:MBS, at=4325.000000;
+qd44:qdType, at=4350.000000;
+sd44:sdType, at=4350.000000;
+DIP70:MBS, at=4375.000000;
+
+/*cell45*/
+qf45:qfType, at=4400.000000;
+sf45:sfType, at=4400.000000;
+DIP71:MBS, at=4425.000000;
+qd45:qdType, at=4450.000000;
+sd45:sdType, at=4450.000000;
+DIP72:MBS, at=4475.000000;
+
+/*cell46*/
+qf46:qfType, at=4500.000000;
+sf46:sfType, at=4500.000000;
+DIP73:MBS, at=4525.000000;
+qd46:qdType, at=4550.000000;
+sd46:sdType, at=4550.000000;
+DIP74:MBS, at=4575.000000;
+
+/*cell47*/
+qf47:qfType, at=4600.000000;
+sf47:sfType, at=4600.000000;
+DIP75:MBS, at=4625.000000;
+qd47:qdType, at=4650.000000;
+sd47:sdType, at=4650.000000;
+DIP76:MBS, at=4675.000000;
+
+/*cell48*/
+qf48:qfType, at=4700.000000;
+sf48:sfType, at=4700.000000;
+DIP77:MBS, at=4725.000000;
+qd48:qdType, at=4750.000000;
+sd48:sdType, at=4750.000000;
+DIP78:MBS, at=4775.000000;
+
+/*cell49*/
+qf49:qfType, at=4800.000000;
+sf49:sfType, at=4800.000000;
+DIP79:MBS, at=4825.000000;
+qd49:qdType, at=4850.000000;
+sd49:sdType, at=4850.000000;
+DIP80:MBS, at=4875.000000;
+
+/*cell50*/
+qf50:qfType, at=4900.000000;
+sf50:sfType, at=4900.000000;
+DIP81:MBS, at=4925.000000;
+qd50:qdType, at=4950.000000;
+sd50:sdType, at=4950.000000;
+DIP82:MBS, at=4975.000000;
+
+/*cell51*/
+qf51:qfType, at=5000.000000;
+sf51:sfType, at=5000.000000;
+DIP83:MBS, at=5025.000000;
+qd51:qdType, at=5050.000000;
+sd51:sdType, at=5050.000000;
+DIP84:MBS, at=5075.000000;
+
+/*cell52*/
+qf52:qfType, at=5100.000000;
+sf52:sfType, at=5100.000000;
+DIP85:MBS, at=5125.000000;
+qd52:qdType, at=5150.000000;
+sd52:sdType, at=5150.000000;
+DIP86:MBS, at=5175.000000;
+
+/*cell53*/
+qf53:qfType, at=5200.000000;
+sf53:sfType, at=5200.000000;
+DIP87:MBS, at=5225.000000;
+qd53:qdType, at=5250.000000;
+sd53:sdType, at=5250.000000;
+DIP88:MBS, at=5275.000000;
+
+/*cell54*/
+qf54:qfType, at=5300.000000;
+sf54:sfType, at=5300.000000;
+DIP89:MBS, at=5325.000000;
+qd54:qdType, at=5350.000000;
+sd54:sdType, at=5350.000000;
+DIP90:MBS, at=5375.000000;
+
+/*cell55*/
+qf55:qfType, at=5400.000000;
+sf55:sfType, at=5400.000000;
+DIP91:MBS, at=5425.000000;
+qd55:qdType, at=5450.000000;
+sd55:sdType, at=5450.000000;
+DIP92:MBS, at=5475.000000;
+
+/*cell56*/
+qf56:qfType, at=5500.000000;
+sf56:sfType, at=5500.000000;
+DIP93:MBS, at=5525.000000;
+qd56:qdType, at=5550.000000;
+sd56:sdType, at=5550.000000;
+DIP94:MBS, at=5575.000000;
+
+/*cell57*/
+qf57:qfType, at=5600.000000;
+sf57:sfType, at=5600.000000;
+DIP95:MBS, at=5625.000000;
+qd57:qdType, at=5650.000000;
+sd57:sdType, at=5650.000000;
+DIP96:MBS, at=5675.000000;
+
+/*cell58*/
+qf58:qfType, at=5700.000000;
+sf58:sfType, at=5700.000000;
+DIP97:MBS, at=5725.000000;
+qd58:qdType, at=5750.000000;
+sd58:sdType, at=5750.000000;
+DIP98:MBS, at=5775.000000;
+
+/*cell59*/
+qf59:qfType, at=5800.000000;
+sf59:sfType, at=5800.000000;
+DIP99:MBS, at=5825.000000;
+qd59:qdType, at=5850.000000;
+sd59:sdType, at=5850.000000;
+DIP100:MBS, at=5875.000000;
+
+/*cell60*/
+qf60:qfType, at=5900.000000;
+sf60:sfType, at=5900.000000;
+DIP101:MBS, at=5925.000000;
+qd60:qdType, at=5950.000000;
+sd60:sdType, at=5950.000000;
+DIP102:MBS, at=5975.000000;
+
+/*cell61*/
+qf61:qfType, at=6000.000000;
+qd61:qdType, at=6050.000000;
+
+/*cell62*/
+qf62:qfType, at=6100.000000;
+DIP103:MBS, at=6125.000000;
+qd62:qdType, at=6150.000000;
+DIP104:MBS, at=6175.000000;
+
+/*cell63*/
+qf63:qfType, at=6200.000000;
+qd63:qdType, at=6250.000000;
+
+/*cell64*/
+qf64:qfType, at=6300.000000;
+qd64:qdType, at=6350.000000;
+
+/*cell65*/
+qf65:qfType, at=6400.000000;
+qd65:qdType, at=6450.000000;
+
+/*cell66*/
+qf66:qfType, at=6500.000000;
+qd66:qdType, at=6550.000000;
+
+/*cell67*/
+qf67:qfType, at=6600.000000;
+DIP105:MBS, at=6625.000000;
+qd67:qdType, at=6650.000000;
+DIP106:MBS, at=6675.000000;
+
+/*cell68*/
+qf68:qfType, at=6700.000000;
+qd68:qdType, at=6750.000000;
+
+/*cell69*/
+qf69:qfType, at=6800.000000;
+sf69:sfType, at=6800.000000;
+DIP107:MBS, at=6825.000000;
+qd69:qdType, at=6850.000000;
+sd69:sdType, at=6850.000000;
+DIP108:MBS, at=6875.000000;
+
+/*cell70*/
+qf70:qfType, at=6900.000000;
+sf70:sfType, at=6900.000000;
+DIP109:MBS, at=6925.000000;
+qd70:qdType, at=6950.000000;
+sd70:sdType, at=6950.000000;
+DIP110:MBS, at=6975.000000;
+
+/*cell71*/
+qf71:qfType, at=7000.000000;
+sf71:sfType, at=7000.000000;
+DIP111:MBS, at=7025.000000;
+qd71:qdType, at=7050.000000;
+sd71:sdType, at=7050.000000;
+DIP112:MBS, at=7075.000000;
+
+/*cell72*/
+qf72:qfType, at=7100.000000;
+sf72:sfType, at=7100.000000;
+DIP113:MBS, at=7125.000000;
+qd72:qdType, at=7150.000000;
+sd72:sdType, at=7150.000000;
+DIP114:MBS, at=7175.000000;
+
+/*cell73*/
+qf73:qfType, at=7200.000000;
+sf73:sfType, at=7200.000000;
+DIP115:MBS, at=7225.000000;
+qd73:qdType, at=7250.000000;
+sd73:sdType, at=7250.000000;
+DIP116:MBS, at=7275.000000;
+
+/*cell74*/
+qf74:qfType, at=7300.000000;
+sf74:sfType, at=7300.000000;
+DIP117:MBS, at=7325.000000;
+qd74:qdType, at=7350.000000;
+sd74:sdType, at=7350.000000;
+DIP118:MBS, at=7375.000000;
+
+/*cell75*/
+qf75:qfType, at=7400.000000;
+sf75:sfType, at=7400.000000;
+DIP119:MBS, at=7425.000000;
+qd75:qdType, at=7450.000000;
+sd75:sdType, at=7450.000000;
+DIP120:MBS, at=7475.000000;
+
+/*cell76*/
+qf76:qfType, at=7500.000000;
+sf76:sfType, at=7500.000000;
+DIP121:MBS, at=7525.000000;
+qd76:qdType, at=7550.000000;
+sd76:sdType, at=7550.000000;
+DIP122:MBS, at=7575.000000;
+
+/*cell77*/
+qf77:qfType, at=7600.000000;
+sf77:sfType, at=7600.000000;
+DIP123:MBS, at=7625.000000;
+qd77:qdType, at=7650.000000;
+sd77:sdType, at=7650.000000;
+DIP124:MBS, at=7675.000000;
+
+/*cell78*/
+qf78:qfType, at=7700.000000;
+sf78:sfType, at=7700.000000;
+DIP125:MBS, at=7725.000000;
+qd78:qdType, at=7750.000000;
+sd78:sdType, at=7750.000000;
+DIP126:MBS, at=7775.000000;
+
+/*cell79*/
+qf79:qfType, at=7800.000000;
+sf79:sfType, at=7800.000000;
+DIP127:MBS, at=7825.000000;
+qd79:qdType, at=7850.000000;
+sd79:sdType, at=7850.000000;
+DIP128:MBS, at=7875.000000;
+
+/*cell80*/
+qf80:qfType, at=7900.000000;
+sf80:sfType, at=7900.000000;
+DIP129:MBS, at=7925.000000;
+qd80:qdType, at=7950.000000;
+sd80:sdType, at=7950.000000;
+DIP130:MBS, at=7975.000000;
+
+/*cell81*/
+qf81:qfType, at=8000.000000;
+sf81:sfType, at=8000.000000;
+DIP131:MBS, at=8025.000000;
+qd81:qdType, at=8050.000000;
+sd81:sdType, at=8050.000000;
+DIP132:MBS, at=8075.000000;
+
+/*cell82*/
+qf82:qfType, at=8100.000000;
+sf82:sfType, at=8100.000000;
+DIP133:MBS, at=8125.000000;
+qd82:qdType, at=8150.000000;
+sd82:sdType, at=8150.000000;
+DIP134:MBS, at=8175.000000;
+
+/*cell83*/
+qf83:qfType, at=8200.000000;
+sf83:sfType, at=8200.000000;
+DIP135:MBS, at=8225.000000;
+qd83:qdType, at=8250.000000;
+sd83:sdType, at=8250.000000;
+DIP136:MBS, at=8275.000000;
+
+/*cell84*/
+qf84:qfType, at=8300.000000;
+sf84:sfType, at=8300.000000;
+DIP137:MBS, at=8325.000000;
+qd84:qdType, at=8350.000000;
+sd84:sdType, at=8350.000000;
+DIP138:MBS, at=8375.000000;
+
+/*cell85*/
+qf85:qfType, at=8400.000000;
+sf85:sfType, at=8400.000000;
+DIP139:MBS, at=8425.000000;
+qd85:qdType, at=8450.000000;
+sd85:sdType, at=8450.000000;
+DIP140:MBS, at=8475.000000;
+
+/*cell86*/
+qf86:qfType, at=8500.000000;
+sf86:sfType, at=8500.000000;
+DIP141:MBS, at=8525.000000;
+qd86:qdType, at=8550.000000;
+sd86:sdType, at=8550.000000;
+DIP142:MBS, at=8575.000000;
+
+/*cell87*/
+qf87:qfType, at=8600.000000;
+sf87:sfType, at=8600.000000;
+DIP143:MBS, at=8625.000000;
+qd87:qdType, at=8650.000000;
+sd87:sdType, at=8650.000000;
+DIP144:MBS, at=8675.000000;
+
+/*cell88*/
+qf88:qfType, at=8700.000000;
+sf88:sfType, at=8700.000000;
+DIP145:MBS, at=8725.000000;
+qd88:qdType, at=8750.000000;
+sd88:sdType, at=8750.000000;
+DIP146:MBS, at=8775.000000;
+
+/*cell89*/
+qf89:qfType, at=8800.000000;
+sf89:sfType, at=8800.000000;
+DIP147:MBS, at=8825.000000;
+qd89:qdType, at=8850.000000;
+sd89:sdType, at=8850.000000;
+DIP148:MBS, at=8875.000000;
+
+/*cell90*/
+qf90:qfType, at=8900.000000;
+sf90:sfType, at=8900.000000;
+DIP149:MBS, at=8925.000000;
+qd90:qdType, at=8950.000000;
+sd90:sdType, at=8950.000000;
+DIP150:MBS, at=8975.000000;
+
+/*cell91*/
+qf91:qfType, at=9000.000000;
+sf91:sfType, at=9000.000000;
+DIP151:MBS, at=9025.000000;
+qd91:qdType, at=9050.000000;
+sd91:sdType, at=9050.000000;
+DIP152:MBS, at=9075.000000;
+
+/*cell92*/
+qf92:qfType, at=9100.000000;
+sf92:sfType, at=9100.000000;
+DIP153:MBS, at=9125.000000;
+qd92:qdType, at=9150.000000;
+sd92:sdType, at=9150.000000;
+DIP154:MBS, at=9175.000000;
+
+/*cell93*/
+qf93:qfType, at=9200.000000;
+qd93:qdType, at=9250.000000;
+
+/*cell94*/
+qf94:qfType, at=9300.000000;
+DIP155:MBS, at=9325.000000;
+qd94:qdType, at=9350.000000;
+DIP156:MBS, at=9375.000000;
+
+/*cell95*/
+qf95:qfType, at=9400.000000;
+qd95:qdType, at=9450.000000;
+
+/*cell96*/
+qf96:qfType, at=9500.000000;
+qd96:qdType, at=9550.000000;
+
+/*cell97*/
+qf97:qfType, at=9600.000000;
+qd97:qdType, at=9650.000000;
+
+/*cell98*/
+qf98:qfType, at=9700.000000;
+qd98:qdType, at=9750.000000;
+
+/*cell99*/
+qf99:qfType, at=9800.000000;
+DIP157:MBS, at=9825.000000;
+qd99:qdType, at=9850.000000;
+DIP158:MBS, at=9875.000000;
+
+/*cell100*/
+qf100:qfType, at=9900.000000;
+qd100:qdType, at=9950.000000;
+
+/*cell101*/
+qf101:qfType, at=10000.000000;
+sf101:sfType, at=10000.000000;
+DIP159:MBS, at=10025.000000;
+qd101:qdType, at=10050.000000;
+sd101:sdType, at=10050.000000;
+DIP160:MBS, at=10075.000000;
+
+/*cell102*/
+qf102:qfType, at=10100.000000;
+sf102:sfType, at=10100.000000;
+DIP161:MBS, at=10125.000000;
+qd102:qdType, at=10150.000000;
+sd102:sdType, at=10150.000000;
+DIP162:MBS, at=10175.000000;
+
+/*cell103*/
+qf103:qfType, at=10200.000000;
+sf103:sfType, at=10200.000000;
+DIP163:MBS, at=10225.000000;
+qd103:qdType, at=10250.000000;
+sd103:sdType, at=10250.000000;
+DIP164:MBS, at=10275.000000;
+
+/*cell104*/
+qf104:qfType, at=10300.000000;
+sf104:sfType, at=10300.000000;
+DIP165:MBS, at=10325.000000;
+qd104:qdType, at=10350.000000;
+sd104:sdType, at=10350.000000;
+DIP166:MBS, at=10375.000000;
+
+/*cell105*/
+qf105:qfType, at=10400.000000;
+sf105:sfType, at=10400.000000;
+DIP167:MBS, at=10425.000000;
+qd105:qdType, at=10450.000000;
+sd105:sdType, at=10450.000000;
+DIP168:MBS, at=10475.000000;
+
+/*cell106*/
+qf106:qfType, at=10500.000000;
+sf106:sfType, at=10500.000000;
+DIP169:MBS, at=10525.000000;
+qd106:qdType, at=10550.000000;
+sd106:sdType, at=10550.000000;
+DIP170:MBS, at=10575.000000;
+
+/*cell107*/
+qf107:qfType, at=10600.000000;
+sf107:sfType, at=10600.000000;
+DIP171:MBS, at=10625.000000;
+qd107:qdType, at=10650.000000;
+sd107:sdType, at=10650.000000;
+DIP172:MBS, at=10675.000000;
+
+/*cell108*/
+qf108:qfType, at=10700.000000;
+sf108:sfType, at=10700.000000;
+DIP173:MBS, at=10725.000000;
+qd108:qdType, at=10750.000000;
+sd108:sdType, at=10750.000000;
+DIP174:MBS, at=10775.000000;
+
+/*cell109*/
+qf109:qfType, at=10800.000000;
+sf109:sfType, at=10800.000000;
+DIP175:MBS, at=10825.000000;
+qd109:qdType, at=10850.000000;
+sd109:sdType, at=10850.000000;
+DIP176:MBS, at=10875.000000;
+
+/*cell110*/
+qf110:qfType, at=10900.000000;
+sf110:sfType, at=10900.000000;
+DIP177:MBS, at=10925.000000;
+qd110:qdType, at=10950.000000;
+sd110:sdType, at=10950.000000;
+DIP178:MBS, at=10975.000000;
+
+/*cell111*/
+qf111:qfType, at=11000.000000;
+sf111:sfType, at=11000.000000;
+DIP179:MBS, at=11025.000000;
+qd111:qdType, at=11050.000000;
+sd111:sdType, at=11050.000000;
+DIP180:MBS, at=11075.000000;
+
+/*cell112*/
+qf112:qfType, at=11100.000000;
+sf112:sfType, at=11100.000000;
+DIP181:MBS, at=11125.000000;
+qd112:qdType, at=11150.000000;
+sd112:sdType, at=11150.000000;
+DIP182:MBS, at=11175.000000;
+
+/*cell113*/
+qf113:qfType, at=11200.000000;
+sf113:sfType, at=11200.000000;
+DIP183:MBS, at=11225.000000;
+qd113:qdType, at=11250.000000;
+sd113:sdType, at=11250.000000;
+DIP184:MBS, at=11275.000000;
+
+/*cell114*/
+qf114:qfType, at=11300.000000;
+sf114:sfType, at=11300.000000;
+DIP185:MBS, at=11325.000000;
+qd114:qdType, at=11350.000000;
+sd114:sdType, at=11350.000000;
+DIP186:MBS, at=11375.000000;
+
+/*cell115*/
+qf115:qfType, at=11400.000000;
+sf115:sfType, at=11400.000000;
+DIP187:MBS, at=11425.000000;
+qd115:qdType, at=11450.000000;
+sd115:sdType, at=11450.000000;
+DIP188:MBS, at=11475.000000;
+
+/*cell116*/
+qf116:qfType, at=11500.000000;
+sf116:sfType, at=11500.000000;
+DIP189:MBS, at=11525.000000;
+qd116:qdType, at=11550.000000;
+sd116:sdType, at=11550.000000;
+DIP190:MBS, at=11575.000000;
+
+/*cell117*/
+qf117:qfType, at=11600.000000;
+sf117:sfType, at=11600.000000;
+DIP191:MBS, at=11625.000000;
+qd117:qdType, at=11650.000000;
+sd117:sdType, at=11650.000000;
+DIP192:MBS, at=11675.000000;
+
+/*cell118*/
+qf118:qfType, at=11700.000000;
+sf118:sfType, at=11700.000000;
+DIP193:MBS, at=11725.000000;
+qd118:qdType, at=11750.000000;
+sd118:sdType, at=11750.000000;
+DIP194:MBS, at=11775.000000;
+
+/*cell119*/
+qf119:qfType, at=11800.000000;
+sf119:sfType, at=11800.000000;
+DIP195:MBS, at=11825.000000;
+qd119:qdType, at=11850.000000;
+sd119:sdType, at=11850.000000;
+DIP196:MBS, at=11875.000000;
+
+/*cell120*/
+qf120:qfType, at=11900.000000;
+sf120:sfType, at=11900.000000;
+DIP197:MBS, at=11925.000000;
+qd120:qdType, at=11950.000000;
+sd120:sdType, at=11950.000000;
+DIP198:MBS, at=11975.000000;
+
+/*cell121*/
+qf121:qfType, at=12000.000000;
+sf121:sfType, at=12000.000000;
+DIP199:MBS, at=12025.000000;
+qd121:qdType, at=12050.000000;
+sd121:sdType, at=12050.000000;
+DIP200:MBS, at=12075.000000;
+
+/*cell122*/
+qf122:qfType, at=12100.000000;
+sf122:sfType, at=12100.000000;
+DIP201:MBS, at=12125.000000;
+qd122:qdType, at=12150.000000;
+sd122:sdType, at=12150.000000;
+DIP202:MBS, at=12175.000000;
+
+/*cell123*/
+qf123:qfType, at=12200.000000;
+sf123:sfType, at=12200.000000;
+DIP203:MBS, at=12225.000000;
+qd123:qdType, at=12250.000000;
+sd123:sdType, at=12250.000000;
+DIP204:MBS, at=12275.000000;
+
+/*cell124*/
+qf124:qfType, at=12300.000000;
+sf124:sfType, at=12300.000000;
+DIP205:MBS, at=12325.000000;
+qd124:qdType, at=12350.000000;
+sd124:sdType, at=12350.000000;
+DIP206:MBS, at=12375.000000;
+
+/*cell125*/
+qf125:qfType, at=12400.000000;
+qd125:qdType, at=12450.000000;
+
+/*cell126*/
+qf126:qfType, at=12500.000000;
+DIP207:MBS, at=12525.000000;
+qd126:qdType, at=12550.000000;
+DIP208:MBS, at=12575.000000;
+
+/*cell127*/
+qf127:qfType, at=12600.000000;
+qd127:qdType, at=12650.000000;
+
+/*cell128*/
+qf128:qfType, at=12700.000000;
+qd128:qdType, at=12750.000000;
+
+/*cell129*/
+qf129:qfType, at=12800.000000;
+qd129:qdType, at=12850.000000;
+
+/*cell130*/
+qf130:qfType, at=12900.000000;
+qd130:qdType, at=12950.000000;
+
+/*cell131*/
+qf131:qfType, at=13000.000000;
+DIP209:MBS, at=13025.000000;
+qd131:qdType, at=13050.000000;
+DIP210:MBS, at=13075.000000;
+
+/*cell132*/
+qf132:qfType, at=13100.000000;
+qd132:qdType, at=13150.000000;
+
+/*cell133*/
+qf133:qfType, at=13200.000000;
+sf133:sfType, at=13200.000000;
+DIP211:MBS, at=13225.000000;
+qd133:qdType, at=13250.000000;
+sd133:sdType, at=13250.000000;
+DIP212:MBS, at=13275.000000;
+
+/*cell134*/
+qf134:qfType, at=13300.000000;
+sf134:sfType, at=13300.000000;
+DIP213:MBS, at=13325.000000;
+qd134:qdType, at=13350.000000;
+sd134:sdType, at=13350.000000;
+DIP214:MBS, at=13375.000000;
+
+/*cell135*/
+qf135:qfType, at=13400.000000;
+sf135:sfType, at=13400.000000;
+DIP215:MBS, at=13425.000000;
+qd135:qdType, at=13450.000000;
+sd135:sdType, at=13450.000000;
+DIP216:MBS, at=13475.000000;
+
+/*cell136*/
+qf136:qfType, at=13500.000000;
+sf136:sfType, at=13500.000000;
+DIP217:MBS, at=13525.000000;
+qd136:qdType, at=13550.000000;
+sd136:sdType, at=13550.000000;
+DIP218:MBS, at=13575.000000;
+
+/*cell137*/
+qf137:qfType, at=13600.000000;
+sf137:sfType, at=13600.000000;
+DIP219:MBS, at=13625.000000;
+qd137:qdType, at=13650.000000;
+sd137:sdType, at=13650.000000;
+DIP220:MBS, at=13675.000000;
+
+/*cell138*/
+qf138:qfType, at=13700.000000;
+sf138:sfType, at=13700.000000;
+DIP221:MBS, at=13725.000000;
+qd138:qdType, at=13750.000000;
+sd138:sdType, at=13750.000000;
+DIP222:MBS, at=13775.000000;
+
+/*cell139*/
+qf139:qfType, at=13800.000000;
+sf139:sfType, at=13800.000000;
+DIP223:MBS, at=13825.000000;
+qd139:qdType, at=13850.000000;
+sd139:sdType, at=13850.000000;
+DIP224:MBS, at=13875.000000;
+
+/*cell140*/
+qf140:qfType, at=13900.000000;
+sf140:sfType, at=13900.000000;
+DIP225:MBS, at=13925.000000;
+qd140:qdType, at=13950.000000;
+sd140:sdType, at=13950.000000;
+DIP226:MBS, at=13975.000000;
+
+/*cell141*/
+qf141:qfType, at=14000.000000;
+sf141:sfType, at=14000.000000;
+DIP227:MBS, at=14025.000000;
+qd141:qdType, at=14050.000000;
+sd141:sdType, at=14050.000000;
+DIP228:MBS, at=14075.000000;
+
+/*cell142*/
+qf142:qfType, at=14100.000000;
+sf142:sfType, at=14100.000000;
+DIP229:MBS, at=14125.000000;
+qd142:qdType, at=14150.000000;
+sd142:sdType, at=14150.000000;
+DIP230:MBS, at=14175.000000;
+
+/*cell143*/
+qf143:qfType, at=14200.000000;
+sf143:sfType, at=14200.000000;
+DIP231:MBS, at=14225.000000;
+qd143:qdType, at=14250.000000;
+sd143:sdType, at=14250.000000;
+DIP232:MBS, at=14275.000000;
+
+/*cell144*/
+qf144:qfType, at=14300.000000;
+sf144:sfType, at=14300.000000;
+DIP233:MBS, at=14325.000000;
+qd144:qdType, at=14350.000000;
+sd144:sdType, at=14350.000000;
+DIP234:MBS, at=14375.000000;
+
+/*cell145*/
+qf145:qfType, at=14400.000000;
+sf145:sfType, at=14400.000000;
+DIP235:MBS, at=14425.000000;
+qd145:qdType, at=14450.000000;
+sd145:sdType, at=14450.000000;
+DIP236:MBS, at=14475.000000;
+
+/*cell146*/
+qf146:qfType, at=14500.000000;
+sf146:sfType, at=14500.000000;
+DIP237:MBS, at=14525.000000;
+qd146:qdType, at=14550.000000;
+sd146:sdType, at=14550.000000;
+DIP238:MBS, at=14575.000000;
+
+/*cell147*/
+qf147:qfType, at=14600.000000;
+sf147:sfType, at=14600.000000;
+DIP239:MBS, at=14625.000000;
+qd147:qdType, at=14650.000000;
+sd147:sdType, at=14650.000000;
+DIP240:MBS, at=14675.000000;
+
+/*cell148*/
+qf148:qfType, at=14700.000000;
+sf148:sfType, at=14700.000000;
+DIP241:MBS, at=14725.000000;
+qd148:qdType, at=14750.000000;
+sd148:sdType, at=14750.000000;
+DIP242:MBS, at=14775.000000;
+
+/*cell149*/
+qf149:qfType, at=14800.000000;
+sf149:sfType, at=14800.000000;
+DIP243:MBS, at=14825.000000;
+qd149:qdType, at=14850.000000;
+sd149:sdType, at=14850.000000;
+DIP244:MBS, at=14875.000000;
+
+/*cell150*/
+qf150:qfType, at=14900.000000;
+sf150:sfType, at=14900.000000;
+DIP245:MBS, at=14925.000000;
+qd150:qdType, at=14950.000000;
+sd150:sdType, at=14950.000000;
+DIP246:MBS, at=14975.000000;
+
+/*cell151*/
+qf151:qfType, at=15000.000000;
+sf151:sfType, at=15000.000000;
+DIP247:MBS, at=15025.000000;
+qd151:qdType, at=15050.000000;
+sd151:sdType, at=15050.000000;
+DIP248:MBS, at=15075.000000;
+
+/*cell152*/
+qf152:qfType, at=15100.000000;
+sf152:sfType, at=15100.000000;
+DIP249:MBS, at=15125.000000;
+qd152:qdType, at=15150.000000;
+sd152:sdType, at=15150.000000;
+DIP250:MBS, at=15175.000000;
+
+/*cell153*/
+qf153:qfType, at=15200.000000;
+sf153:sfType, at=15200.000000;
+DIP251:MBS, at=15225.000000;
+qd153:qdType, at=15250.000000;
+sd153:sdType, at=15250.000000;
+DIP252:MBS, at=15275.000000;
+
+/*cell154*/
+qf154:qfType, at=15300.000000;
+sf154:sfType, at=15300.000000;
+DIP253:MBS, at=15325.000000;
+qd154:qdType, at=15350.000000;
+sd154:sdType, at=15350.000000;
+DIP254:MBS, at=15375.000000;
+
+/*cell155*/
+qf155:qfType, at=15400.000000;
+sf155:sfType, at=15400.000000;
+DIP255:MBS, at=15425.000000;
+qd155:qdType, at=15450.000000;
+sd155:sdType, at=15450.000000;
+DIP256:MBS, at=15475.000000;
+
+/*cell156*/
+qf156:qfType, at=15500.000000;
+sf156:sfType, at=15500.000000;
+DIP257:MBS, at=15525.000000;
+qd156:qdType, at=15550.000000;
+sd156:sdType, at=15550.000000;
+DIP258:MBS, at=15575.000000;
+
+/*cell157*/
+qf157:qfType, at=15600.000000;
+qd157:qdType, at=15650.000000;
+
+/*cell158*/
+qf158:qfType, at=15700.000000;
+DIP259:MBS, at=15725.000000;
+qd158:qdType, at=15750.000000;
+DIP260:MBS, at=15775.000000;
+
+/*cell159*/
+qf159:qfType, at=15800.000000;
+qd159:qdType, at=15850.000000;
+
+/*cell160*/
+qf160:qfType, at=15900.000000;
+qd160:qdType, at=15950.000000;
+
+/*cell161*/
+qf161:qfType, at=16000.000000;
+qd161:qdType, at=16050.000000;
+
+/*cell162*/
+qf162:qfType, at=16100.000000;
+qd162:qdType, at=16150.000000;
+
+/*cell163*/
+qf163:qfType, at=16200.000000;
+DIP261:MBS, at=16225.000000;
+qd163:qdType, at=16250.000000;
+DIP262:MBS, at=16275.000000;
+
+/*cell164*/
+qf164:qfType, at=16300.000000;
+qd164:qdType, at=16350.000000;
+
+/*cell165*/
+qf165:qfType, at=16400.000000;
+sf165:sfType, at=16400.000000;
+DIP263:MBS, at=16425.000000;
+qd165:qdType, at=16450.000000;
+sd165:sdType, at=16450.000000;
+DIP264:MBS, at=16475.000000;
+
+/*cell166*/
+qf166:qfType, at=16500.000000;
+sf166:sfType, at=16500.000000;
+DIP265:MBS, at=16525.000000;
+qd166:qdType, at=16550.000000;
+sd166:sdType, at=16550.000000;
+DIP266:MBS, at=16575.000000;
+
+/*cell167*/
+qf167:qfType, at=16600.000000;
+sf167:sfType, at=16600.000000;
+DIP267:MBS, at=16625.000000;
+qd167:qdType, at=16650.000000;
+sd167:sdType, at=16650.000000;
+DIP268:MBS, at=16675.000000;
+
+/*cell168*/
+qf168:qfType, at=16700.000000;
+sf168:sfType, at=16700.000000;
+DIP269:MBS, at=16725.000000;
+qd168:qdType, at=16750.000000;
+sd168:sdType, at=16750.000000;
+DIP270:MBS, at=16775.000000;
+
+/*cell169*/
+qf169:qfType, at=16800.000000;
+sf169:sfType, at=16800.000000;
+DIP271:MBS, at=16825.000000;
+qd169:qdType, at=16850.000000;
+sd169:sdType, at=16850.000000;
+DIP272:MBS, at=16875.000000;
+
+/*cell170*/
+qf170:qfType, at=16900.000000;
+sf170:sfType, at=16900.000000;
+DIP273:MBS, at=16925.000000;
+qd170:qdType, at=16950.000000;
+sd170:sdType, at=16950.000000;
+DIP274:MBS, at=16975.000000;
+
+/*cell171*/
+qf171:qfType, at=17000.000000;
+sf171:sfType, at=17000.000000;
+DIP275:MBS, at=17025.000000;
+qd171:qdType, at=17050.000000;
+sd171:sdType, at=17050.000000;
+DIP276:MBS, at=17075.000000;
+
+/*cell172*/
+qf172:qfType, at=17100.000000;
+sf172:sfType, at=17100.000000;
+DIP277:MBS, at=17125.000000;
+qd172:qdType, at=17150.000000;
+sd172:sdType, at=17150.000000;
+DIP278:MBS, at=17175.000000;
+
+/*cell173*/
+qf173:qfType, at=17200.000000;
+sf173:sfType, at=17200.000000;
+DIP279:MBS, at=17225.000000;
+qd173:qdType, at=17250.000000;
+sd173:sdType, at=17250.000000;
+DIP280:MBS, at=17275.000000;
+
+/*cell174*/
+qf174:qfType, at=17300.000000;
+sf174:sfType, at=17300.000000;
+DIP281:MBS, at=17325.000000;
+qd174:qdType, at=17350.000000;
+sd174:sdType, at=17350.000000;
+DIP282:MBS, at=17375.000000;
+
+/*cell175*/
+qf175:qfType, at=17400.000000;
+sf175:sfType, at=17400.000000;
+DIP283:MBS, at=17425.000000;
+qd175:qdType, at=17450.000000;
+sd175:sdType, at=17450.000000;
+DIP284:MBS, at=17475.000000;
+
+/*cell176*/
+qf176:qfType, at=17500.000000;
+sf176:sfType, at=17500.000000;
+DIP285:MBS, at=17525.000000;
+qd176:qdType, at=17550.000000;
+sd176:sdType, at=17550.000000;
+DIP286:MBS, at=17575.000000;
+
+/*cell177*/
+qf177:qfType, at=17600.000000;
+sf177:sfType, at=17600.000000;
+DIP287:MBS, at=17625.000000;
+qd177:qdType, at=17650.000000;
+sd177:sdType, at=17650.000000;
+DIP288:MBS, at=17675.000000;
+
+/*cell178*/
+qf178:qfType, at=17700.000000;
+sf178:sfType, at=17700.000000;
+DIP289:MBS, at=17725.000000;
+qd178:qdType, at=17750.000000;
+sd178:sdType, at=17750.000000;
+DIP290:MBS, at=17775.000000;
+
+/*cell179*/
+qf179:qfType, at=17800.000000;
+sf179:sfType, at=17800.000000;
+DIP291:MBS, at=17825.000000;
+qd179:qdType, at=17850.000000;
+sd179:sdType, at=17850.000000;
+DIP292:MBS, at=17875.000000;
+
+/*cell180*/
+qf180:qfType, at=17900.000000;
+sf180:sfType, at=17900.000000;
+DIP293:MBS, at=17925.000000;
+qd180:qdType, at=17950.000000;
+sd180:sdType, at=17950.000000;
+DIP294:MBS, at=17975.000000;
+
+/*cell181*/
+qf181:qfType, at=18000.000000;
+sf181:sfType, at=18000.000000;
+DIP295:MBS, at=18025.000000;
+qd181:qdType, at=18050.000000;
+sd181:sdType, at=18050.000000;
+DIP296:MBS, at=18075.000000;
+
+/*cell182*/
+qf182:qfType, at=18100.000000;
+sf182:sfType, at=18100.000000;
+DIP297:MBS, at=18125.000000;
+qd182:qdType, at=18150.000000;
+sd182:sdType, at=18150.000000;
+DIP298:MBS, at=18175.000000;
+
+/*cell183*/
+qf183:qfType, at=18200.000000;
+sf183:sfType, at=18200.000000;
+DIP299:MBS, at=18225.000000;
+qd183:qdType, at=18250.000000;
+sd183:sdType, at=18250.000000;
+DIP300:MBS, at=18275.000000;
+
+/*cell184*/
+qf184:qfType, at=18300.000000;
+sf184:sfType, at=18300.000000;
+DIP301:MBS, at=18325.000000;
+qd184:qdType, at=18350.000000;
+sd184:sdType, at=18350.000000;
+DIP302:MBS, at=18375.000000;
+
+/*cell185*/
+qf185:qfType, at=18400.000000;
+sf185:sfType, at=18400.000000;
+DIP303:MBS, at=18425.000000;
+qd185:qdType, at=18450.000000;
+sd185:sdType, at=18450.000000;
+DIP304:MBS, at=18475.000000;
+
+/*cell186*/
+qf186:qfType, at=18500.000000;
+sf186:sfType, at=18500.000000;
+DIP305:MBS, at=18525.000000;
+qd186:qdType, at=18550.000000;
+sd186:sdType, at=18550.000000;
+DIP306:MBS, at=18575.000000;
+
+/*cell187*/
+qf187:qfType, at=18600.000000;
+sf187:sfType, at=18600.000000;
+DIP307:MBS, at=18625.000000;
+qd187:qdType, at=18650.000000;
+sd187:sdType, at=18650.000000;
+DIP308:MBS, at=18675.000000;
+
+/*cell188*/
+qf188:qfType, at=18700.000000;
+sf188:sfType, at=18700.000000;
+DIP309:MBS, at=18725.000000;
+qd188:qdType, at=18750.000000;
+sd188:sdType, at=18750.000000;
+DIP310:MBS, at=18775.000000;
+
+/*cell189*/
+qf189:qfType, at=18800.000000;
+qd189:qdType, at=18850.000000;
+
+/*cell190*/
+qf190:qfType, at=18900.000000;
+DIP311:MBS, at=18925.000000;
+qd190:qdType, at=18950.000000;
+DIP312:MBS, at=18975.000000;
+
+/*cell191*/
+qf191:qfType, at=19000.000000;
+qd191:qdType, at=19050.000000;
+
+/*cell192*/
+qf192:qfType, at=19100.000000;
+qd192:qdType, at=19150.000000;
+
+/*cell193*/
+qf193:qfType, at=19200.000000;
+qd193:qdType, at=19250.000000;
+
+/*cell194*/
+qf194:qfType, at=19300.000000;
+qd194:qdType, at=19350.000000;
+
+/*cell195*/
+qf195:qfType, at=19400.000000;
+DIP313:MBS, at=19425.000000;
+qd195:qdType, at=19450.000000;
+DIP314:MBS, at=19475.000000;
+
+/*cell196*/
+qf196:qfType, at=19500.000000;
+qd196:qdType, at=19550.000000;
+
+/*cell197*/
+qf197:qfType, at=19600.000000;
+sf197:sfType, at=19600.000000;
+DIP315:MBS, at=19625.000000;
+qd197:qdType, at=19650.000000;
+sd197:sdType, at=19650.000000;
+DIP316:MBS, at=19675.000000;
+
+/*cell198*/
+qf198:qfType, at=19700.000000;
+sf198:sfType, at=19700.000000;
+DIP317:MBS, at=19725.000000;
+qd198:qdType, at=19750.000000;
+sd198:sdType, at=19750.000000;
+DIP318:MBS, at=19775.000000;
+
+/*cell199*/
+qf199:qfType, at=19800.000000;
+sf199:sfType, at=19800.000000;
+DIP319:MBS, at=19825.000000;
+qd199:qdType, at=19850.000000;
+sd199:sdType, at=19850.000000;
+DIP320:MBS, at=19875.000000;
+
+/*cell200*/
+qf200:qfType, at=19900.000000;
+sf200:sfType, at=19900.000000;
+DIP321:MBS, at=19925.000000;
+qd200:qdType, at=19950.000000;
+sd200:sdType, at=19950.000000;
+DIP322:MBS, at=19975.000000;
+
+/*cell201*/
+qf201:qfType, at=20000.000000;
+sf201:sfType, at=20000.000000;
+DIP323:MBS, at=20025.000000;
+qd201:qdType, at=20050.000000;
+sd201:sdType, at=20050.000000;
+DIP324:MBS, at=20075.000000;
+
+/*cell202*/
+qf202:qfType, at=20100.000000;
+sf202:sfType, at=20100.000000;
+DIP325:MBS, at=20125.000000;
+qd202:qdType, at=20150.000000;
+sd202:sdType, at=20150.000000;
+DIP326:MBS, at=20175.000000;
+
+/*cell203*/
+qf203:qfType, at=20200.000000;
+sf203:sfType, at=20200.000000;
+DIP327:MBS, at=20225.000000;
+qd203:qdType, at=20250.000000;
+sd203:sdType, at=20250.000000;
+DIP328:MBS, at=20275.000000;
+
+/*cell204*/
+qf204:qfType, at=20300.000000;
+sf204:sfType, at=20300.000000;
+DIP329:MBS, at=20325.000000;
+qd204:qdType, at=20350.000000;
+sd204:sdType, at=20350.000000;
+DIP330:MBS, at=20375.000000;
+
+/*cell205*/
+qf205:qfType, at=20400.000000;
+sf205:sfType, at=20400.000000;
+DIP331:MBS, at=20425.000000;
+qd205:qdType, at=20450.000000;
+sd205:sdType, at=20450.000000;
+DIP332:MBS, at=20475.000000;
+
+/*cell206*/
+qf206:qfType, at=20500.000000;
+sf206:sfType, at=20500.000000;
+DIP333:MBS, at=20525.000000;
+qd206:qdType, at=20550.000000;
+sd206:sdType, at=20550.000000;
+DIP334:MBS, at=20575.000000;
+
+/*cell207*/
+qf207:qfType, at=20600.000000;
+sf207:sfType, at=20600.000000;
+DIP335:MBS, at=20625.000000;
+qd207:qdType, at=20650.000000;
+sd207:sdType, at=20650.000000;
+DIP336:MBS, at=20675.000000;
+
+/*cell208*/
+qf208:qfType, at=20700.000000;
+sf208:sfType, at=20700.000000;
+DIP337:MBS, at=20725.000000;
+qd208:qdType, at=20750.000000;
+sd208:sdType, at=20750.000000;
+DIP338:MBS, at=20775.000000;
+
+/*cell209*/
+qf209:qfType, at=20800.000000;
+sf209:sfType, at=20800.000000;
+DIP339:MBS, at=20825.000000;
+qd209:qdType, at=20850.000000;
+sd209:sdType, at=20850.000000;
+DIP340:MBS, at=20875.000000;
+
+/*cell210*/
+qf210:qfType, at=20900.000000;
+sf210:sfType, at=20900.000000;
+DIP341:MBS, at=20925.000000;
+qd210:qdType, at=20950.000000;
+sd210:sdType, at=20950.000000;
+DIP342:MBS, at=20975.000000;
+
+/*cell211*/
+qf211:qfType, at=21000.000000;
+sf211:sfType, at=21000.000000;
+DIP343:MBS, at=21025.000000;
+qd211:qdType, at=21050.000000;
+sd211:sdType, at=21050.000000;
+DIP344:MBS, at=21075.000000;
+
+/*cell212*/
+qf212:qfType, at=21100.000000;
+sf212:sfType, at=21100.000000;
+DIP345:MBS, at=21125.000000;
+qd212:qdType, at=21150.000000;
+sd212:sdType, at=21150.000000;
+DIP346:MBS, at=21175.000000;
+
+/*cell213*/
+qf213:qfType, at=21200.000000;
+sf213:sfType, at=21200.000000;
+DIP347:MBS, at=21225.000000;
+qd213:qdType, at=21250.000000;
+sd213:sdType, at=21250.000000;
+DIP348:MBS, at=21275.000000;
+
+/*cell214*/
+qf214:qfType, at=21300.000000;
+sf214:sfType, at=21300.000000;
+DIP349:MBS, at=21325.000000;
+qd214:qdType, at=21350.000000;
+sd214:sdType, at=21350.000000;
+DIP350:MBS, at=21375.000000;
+
+/*cell215*/
+qf215:qfType, at=21400.000000;
+sf215:sfType, at=21400.000000;
+DIP351:MBS, at=21425.000000;
+qd215:qdType, at=21450.000000;
+sd215:sdType, at=21450.000000;
+DIP352:MBS, at=21475.000000;
+
+/*cell216*/
+qf216:qfType, at=21500.000000;
+sf216:sfType, at=21500.000000;
+DIP353:MBS, at=21525.000000;
+qd216:qdType, at=21550.000000;
+sd216:sdType, at=21550.000000;
+DIP354:MBS, at=21575.000000;
+
+/*cell217*/
+qf217:qfType, at=21600.000000;
+sf217:sfType, at=21600.000000;
+DIP355:MBS, at=21625.000000;
+qd217:qdType, at=21650.000000;
+sd217:sdType, at=21650.000000;
+DIP356:MBS, at=21675.000000;
+
+/*cell218*/
+qf218:qfType, at=21700.000000;
+sf218:sfType, at=21700.000000;
+DIP357:MBS, at=21725.000000;
+qd218:qdType, at=21750.000000;
+sd218:sdType, at=21750.000000;
+DIP358:MBS, at=21775.000000;
+
+/*cell219*/
+qf219:qfType, at=21800.000000;
+sf219:sfType, at=21800.000000;
+DIP359:MBS, at=21825.000000;
+qd219:qdType, at=21850.000000;
+sd219:sdType, at=21850.000000;
+DIP360:MBS, at=21875.000000;
+
+/*cell220*/
+qf220:qfType, at=21900.000000;
+sf220:sfType, at=21900.000000;
+DIP361:MBS, at=21925.000000;
+qd220:qdType, at=21950.000000;
+sd220:sdType, at=21950.000000;
+DIP362:MBS, at=21975.000000;
+
+/*cell221*/
+qf221:qfType, at=22000.000000;
+qd221:qdType, at=22050.000000;
+
+/*cell222*/
+qf222:qfType, at=22100.000000;
+DIP363:MBS, at=22125.000000;
+qd222:qdType, at=22150.000000;
+DIP364:MBS, at=22175.000000;
+
+/*cell223*/
+qf223:qfType, at=22200.000000;
+qd223:qdType, at=22250.000000;
+
+/*cell224*/
+qf224:qfType, at=22300.000000;
+qd224:qdType, at=22350.000000;
+
+/*cell225*/
+qf225:qfType, at=22400.000000;
+qd225:qdType, at=22450.000000;
+
+/*cell226*/
+qf226:qfType, at=22500.000000;
+qd226:qdType, at=22550.000000;
+
+/*cell227*/
+qf227:qfType, at=22600.000000;
+DIP365:MBS, at=22625.000000;
+qd227:qdType, at=22650.000000;
+DIP366:MBS, at=22675.000000;
+
+/*cell228*/
+qf228:qfType, at=22700.000000;
+qd228:qdType, at=22750.000000;
+
+/*cell229*/
+qf229:qfType, at=22800.000000;
+sf229:sfType, at=22800.000000;
+DIP367:MBS, at=22825.000000;
+qd229:qdType, at=22850.000000;
+sd229:sdType, at=22850.000000;
+DIP368:MBS, at=22875.000000;
+
+/*cell230*/
+qf230:qfType, at=22900.000000;
+sf230:sfType, at=22900.000000;
+DIP369:MBS, at=22925.000000;
+qd230:qdType, at=22950.000000;
+sd230:sdType, at=22950.000000;
+DIP370:MBS, at=22975.000000;
+
+/*cell231*/
+qf231:qfType, at=23000.000000;
+sf231:sfType, at=23000.000000;
+DIP371:MBS, at=23025.000000;
+qd231:qdType, at=23050.000000;
+sd231:sdType, at=23050.000000;
+DIP372:MBS, at=23075.000000;
+
+/*cell232*/
+qf232:qfType, at=23100.000000;
+sf232:sfType, at=23100.000000;
+DIP373:MBS, at=23125.000000;
+qd232:qdType, at=23150.000000;
+sd232:sdType, at=23150.000000;
+DIP374:MBS, at=23175.000000;
+
+/*cell233*/
+qf233:qfType, at=23200.000000;
+sf233:sfType, at=23200.000000;
+DIP375:MBS, at=23225.000000;
+qd233:qdType, at=23250.000000;
+sd233:sdType, at=23250.000000;
+DIP376:MBS, at=23275.000000;
+
+/*cell234*/
+qf234:qfType, at=23300.000000;
+sf234:sfType, at=23300.000000;
+DIP377:MBS, at=23325.000000;
+qd234:qdType, at=23350.000000;
+sd234:sdType, at=23350.000000;
+DIP378:MBS, at=23375.000000;
+
+/*cell235*/
+qf235:qfType, at=23400.000000;
+sf235:sfType, at=23400.000000;
+DIP379:MBS, at=23425.000000;
+qd235:qdType, at=23450.000000;
+sd235:sdType, at=23450.000000;
+DIP380:MBS, at=23475.000000;
+
+/*cell236*/
+qf236:qfType, at=23500.000000;
+sf236:sfType, at=23500.000000;
+DIP381:MBS, at=23525.000000;
+qd236:qdType, at=23550.000000;
+sd236:sdType, at=23550.000000;
+DIP382:MBS, at=23575.000000;
+
+/*cell237*/
+qf237:qfType, at=23600.000000;
+sf237:sfType, at=23600.000000;
+DIP383:MBS, at=23625.000000;
+qd237:qdType, at=23650.000000;
+sd237:sdType, at=23650.000000;
+DIP384:MBS, at=23675.000000;
+
+/*cell238*/
+qf238:qfType, at=23700.000000;
+sf238:sfType, at=23700.000000;
+DIP385:MBS, at=23725.000000;
+qd238:qdType, at=23750.000000;
+sd238:sdType, at=23750.000000;
+DIP386:MBS, at=23775.000000;
+
+/*cell239*/
+qf239:qfType, at=23800.000000;
+sf239:sfType, at=23800.000000;
+DIP387:MBS, at=23825.000000;
+qd239:qdType, at=23850.000000;
+sd239:sdType, at=23850.000000;
+DIP388:MBS, at=23875.000000;
+
+/*cell240*/
+qf240:qfType, at=23900.000000;
+sf240:sfType, at=23900.000000;
+DIP389:MBS, at=23925.000000;
+qd240:qdType, at=23950.000000;
+sd240:sdType, at=23950.000000;
+DIP390:MBS, at=23975.000000;
+
+/*cell241*/
+qf241:qfType, at=24000.000000;
+sf241:sfType, at=24000.000000;
+DIP391:MBS, at=24025.000000;
+qd241:qdType, at=24050.000000;
+sd241:sdType, at=24050.000000;
+DIP392:MBS, at=24075.000000;
+
+/*cell242*/
+qf242:qfType, at=24100.000000;
+sf242:sfType, at=24100.000000;
+DIP393:MBS, at=24125.000000;
+qd242:qdType, at=24150.000000;
+sd242:sdType, at=24150.000000;
+DIP394:MBS, at=24175.000000;
+
+/*cell243*/
+qf243:qfType, at=24200.000000;
+sf243:sfType, at=24200.000000;
+DIP395:MBS, at=24225.000000;
+qd243:qdType, at=24250.000000;
+sd243:sdType, at=24250.000000;
+DIP396:MBS, at=24275.000000;
+
+/*cell244*/
+qf244:qfType, at=24300.000000;
+sf244:sfType, at=24300.000000;
+DIP397:MBS, at=24325.000000;
+qd244:qdType, at=24350.000000;
+sd244:sdType, at=24350.000000;
+DIP398:MBS, at=24375.000000;
+
+/*cell245*/
+qf245:qfType, at=24400.000000;
+sf245:sfType, at=24400.000000;
+DIP399:MBS, at=24425.000000;
+qd245:qdType, at=24450.000000;
+sd245:sdType, at=24450.000000;
+DIP400:MBS, at=24475.000000;
+
+/*cell246*/
+qf246:qfType, at=24500.000000;
+sf246:sfType, at=24500.000000;
+DIP401:MBS, at=24525.000000;
+qd246:qdType, at=24550.000000;
+sd246:sdType, at=24550.000000;
+DIP402:MBS, at=24575.000000;
+
+/*cell247*/
+qf247:qfType, at=24600.000000;
+sf247:sfType, at=24600.000000;
+DIP403:MBS, at=24625.000000;
+qd247:qdType, at=24650.000000;
+sd247:sdType, at=24650.000000;
+DIP404:MBS, at=24675.000000;
+
+/*cell248*/
+qf248:qfType, at=24700.000000;
+sf248:sfType, at=24700.000000;
+DIP405:MBS, at=24725.000000;
+qd248:qdType, at=24750.000000;
+sd248:sdType, at=24750.000000;
+DIP406:MBS, at=24775.000000;
+
+/*cell249*/
+qf249:qfType, at=24800.000000;
+sf249:sfType, at=24800.000000;
+DIP407:MBS, at=24825.000000;
+qd249:qdType, at=24850.000000;
+sd249:sdType, at=24850.000000;
+DIP408:MBS, at=24875.000000;
+
+/*cell250*/
+qf250:qfType, at=24900.000000;
+sf250:sfType, at=24900.000000;
+DIP409:MBS, at=24925.000000;
+qd250:qdType, at=24950.000000;
+sd250:sdType, at=24950.000000;
+DIP410:MBS, at=24975.000000;
+
+/*cell251*/
+qf251:qfType, at=25000.000000;
+sf251:sfType, at=25000.000000;
+DIP411:MBS, at=25025.000000;
+qd251:qdType, at=25050.000000;
+sd251:sdType, at=25050.000000;
+DIP412:MBS, at=25075.000000;
+
+/*cell252*/
+qf252:qfType, at=25100.000000;
+sf252:sfType, at=25100.000000;
+DIP413:MBS, at=25125.000000;
+qd252:qdType, at=25150.000000;
+sd252:sdType, at=25150.000000;
+DIP414:MBS, at=25175.000000;
+
+/*cell253*/
+qf253:qfType, at=25200.000000;
+qd253:qdType, at=25250.000000;
+
+/*cell254*/
+qf254:qfType, at=25300.000000;
+DIP415:MBS, at=25325.000000;
+qd254:qdType, at=25350.000000;
+DIP416:MBS, at=25375.000000;
+
+/*cell255*/
+qf255:qfType, at=25400.000000;
+qd255:qdType, at=25450.000000;
+
+/*cell256*/
+qf256:qfType, at=25500.000000;
+qd256:qdType, at=25550.000000;
+
+ENDSEQUENCE;
+CAV1, volt=0.1, lag=0.5, harmon=35000;
+
+beam, particle=proton, sequence=fodo, energy=6500;
+use, sequence=fodo;
+
+match, sequence = fodo; 
+global, sequence = fodo, DQ1 =0.000000;
+global, sequence = fodo, DQ2 =0.000000;
+global, sequence = fodo, Q1 =43.110000;
+global, sequence = fodo, Q2 =43.210000;
+vary, name = kf, step=0.00001;
+vary, name = kd, step=0.00001;
+vary, name = ksf, step=0.00001;
+vary, name = ksd, step=0.00001;
+lmdif, calls=50, tolerance=1e-6;		//method adopted
+ENDMATCH;
+
+survey,file=survey_master.cas;
+
+twiss,save,centre,file=twiss_master.out;
+CAV1, volt=10, lag=0.5, harmon=35000;
+track,file=track_master0.out,dump;
+
+start, x= 2e-3, px=0, y= 2e-3, py=0, t= 0, pt = 1e-6;            
+start, x= 3e-3, px=0, y= 3e-3, py=0, t= 0, pt = 3e-5;            
+start, x= 4e-3, px=0, y= 4e-3, py=0, t= 0, pt = 6e-5;            
+start, x= 5e-3, px=0, y= 5e-3, py=0, t= 0, pt = 8e-5;           
+start, x= 6e-3, px=0, y= 6e-3, py=0, t= 0, pt = 1e-4;           
+start, x= 7e-3, px=0, y= 7e-3, py=0, t= 0, pt = 1.3e-4;           
+start, x= 8e-3, px=0, y= 8e-3, py=0, t= 0, pt = 1.6e-4;        
+start, x= 9e-3, px=0, y= 9e-3, py=0, t= 0, pt = 1.8e-4;           
+start, x= 10e-3, px=0, y= 10e-3, py=0, t= 0, pt = 2.1e-4;           
+start, x= 11e-3, px=0, y= 11e-3, py=0, t= 0, pt = 3e-4; 
+
+run,turns=1000;
+endtrack;
+stop;
