@@ -7,6 +7,8 @@ def plot_tune_change(mean_x_list, mean_y_list, freq_x_list, freq_y_list, turns):
 
 	plt.figure()
 	plt.plot(turns, mean_x_list)
+	plt.suptitle(r'$Mean$ $tune$ $change$')
+	plt.title(r'$x-plane$')
 	plt.xlabel(r'$Chromaticities$')
 	plt.ylabel(r'$Mean$ $tunes (x)$')
 	ax = plt.gca()
@@ -15,6 +17,8 @@ def plot_tune_change(mean_x_list, mean_y_list, freq_x_list, freq_y_list, turns):
 
 	plt.figure()
 	plt.plot(turns, mean_y_list)
+	plt.suptitle(r'$Mean$ $tune$ $change$')
+	plt.title(r'$y-plane$')
 	plt.xlabel(r'$Chromaticities$')
 	plt.ylabel(r'$Mean$ $tunes (y)$')
 	ax = plt.gca()
@@ -23,6 +27,8 @@ def plot_tune_change(mean_x_list, mean_y_list, freq_x_list, freq_y_list, turns):
 
 	plt.figure()
 	plt.plot(turns, freq_x_list)
+	plt.suptitle(r'$Tune$ $frequency$ $change$')
+	plt.title(r'$x-plane$')
 	plt.xlabel(r'$Chromaticities$')
 	plt.ylabel(r'$Tune$ $frequency (x)$')
 	ax = plt.gca()
@@ -31,6 +37,8 @@ def plot_tune_change(mean_x_list, mean_y_list, freq_x_list, freq_y_list, turns):
 
 	plt.figure()
 	plt.plot(turns, freq_y_list)
+	plt.suptitle(r'$Tune$ $frequency$ $change$')
+	plt.title(r'$y-plane$')
 	plt.xlabel(r'$Chromaticities$')
 	plt.ylabel(r'$Tune$ $frequency (y)$')
 	ax = plt.gca()
@@ -41,6 +49,7 @@ def plot_tune_change(mean_x_list, mean_y_list, freq_x_list, freq_y_list, turns):
 def plot_deltap_change(dp_list, turns):
 	plt.figure(figsize=(7,7))
 	plt.plot(turns, dp_list)
+	plt.title(r'$\Delta$p $frequency$ $change$')
 	plt.xlabel(r'$Chromaticities$')
 	plt.ylabel(r'$\Delta$p $frequencies (x)$')
 	ax = plt.gca()
