@@ -1,0 +1,83 @@
+#plot fft and naff outputs for different chromaticities. These plots show the algorithms' behaviours as chromaticity increases
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plot_compare_chromaticity(chromaticities, fft_x_list, fft_y_list, naff_x_list, naff_y_list, n):
+	plt.close('all')
+	plt.figure(1)
+	plt.plot(chromaticities, fft_x_list, 'y')
+	plt.suptitle('Prominent frequency (FFT-x plane)')
+	plt.title('Number of turns =%d'%n)
+	plt.xlabel('Chromaticities')
+	plt.ylabel('Frequency')
+	plt.grid(True)
+
+	plt.figure(2)
+	plt.plot(chromaticities, naff_x_list, 'm')
+	plt.suptitle('Prominent frequency(NAFF-x plane)')
+	plt.title('Number of turns =%d'%n)
+	plt.xlabel('Chromaticities')
+	plt.ylabel('Frequency')
+	plt.grid(True)
+
+	plt.figure(3)
+	plt.plot(chromaticities, fft_y_list, 'g')
+	plt.suptitle('Prominent frequency (FFT-y plane)')
+	plt.title('Number of turns =%d'%n)
+	plt.xlabel('Chromaticities')
+	plt.ylabel('Frequency')
+	plt.grid(True)
+
+	plt.figure(4)
+	plt.plot(chromaticities, naff_y_list, 'r')
+	plt.suptitle('Prominent frequency (NAFF-y plane)')
+	plt.title('Number of turns =%d'%n)
+	plt.xlabel('Chromaticities')
+	plt.ylabel('Frequency')
+	plt.grid(True)
+
+	plt.show()
+
+def plot_compare_turns(turns, fft_x_list, fft_y_list, naff_x_list, naff_y_list, c):
+	plt.close('all')
+	plt.figure(1)
+	ax = plt.gca()
+	plt.plot(turns, fft_x_list, 'y')
+	plt.suptitle('Prominent frequency (FFT-x plane)')
+	plt.title('Chromaticity =%d'%c)
+	plt.xlabel('Number of turns')
+	plt.ylabel('Frequency')
+	ax.ticklabel_format(useOffset=False)
+	plt.grid(True)
+
+	plt.figure(2)
+	ax = plt.gca()
+	plt.plot(turns, naff_x_list, 'm')
+	plt.suptitle('Prominent frequency(NAFF-x plane)')
+	plt.title('Chromaticity=%d'%c)
+	plt.xlabel('Number of turns')
+	plt.ylabel('Frequency')
+	ax.ticklabel_format(useOffset=False)
+	plt.grid(True)
+
+	plt.figure(3)
+	ax = plt.gca()
+	plt.plot(turns, fft_y_list, 'g')
+	plt.suptitle('Prominent frequency (FFT-y plane)')
+	plt.title('Chromaticity =%d'%c)
+	plt.xlabel('Number of turns')
+	plt.ylabel('Frequency')
+	ax.ticklabel_format(useOffset=False)
+	plt.grid(True)
+
+	plt.figure(4)
+	ax = plt.gca()
+	plt.plot(turns, naff_y_list, 'r')
+	plt.suptitle('Prominent frequency (NAFF-y plane)')
+	plt.title('Chromaticity =%d'%c)
+	plt.xlabel('Number of turns')
+	plt.ylabel('Frequency')
+	ax.ticklabel_format(useOffset=False)
+	plt.grid(True)
+
+	plt.show()
