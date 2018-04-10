@@ -17,7 +17,7 @@ from tune_plots import tune_plots
 
 rc('text', usetex=True)
 
-def window(start, stop, step, width, signal, turn, color='m', plot_all = False, chroma = 1, padd = False):
+def window(start, stop, step, width, signal, turn, color='b', plot_all = False, chroma = 1):
 	#if not plot_all:
 		#plt.figure(figsize=(10,10))
 	amp = []
