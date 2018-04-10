@@ -1,0 +1,1 @@
+In order to use NAFF: Put those scripts in the same folder with your Naff transformation scripts
